@@ -180,6 +180,7 @@ class HeaderDecorator : RecyclerView.ItemDecoration {
         idHeaderSubTextView?.let {
             headerSubTextView = headerView?.findViewById<TextView>(it)
             headerSubTextView?.text = stickedHeaderSubText
+            headerSubTextView?.textSize = fontSize
         }
     }
 

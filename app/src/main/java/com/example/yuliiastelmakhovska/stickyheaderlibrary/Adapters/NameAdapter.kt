@@ -28,12 +28,12 @@ class NameAdapter(private val layoutInflater: LayoutInflater, private val people
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val person = people[position]
         holder.fullName.text = person.fullName
-//        holder.itemView.setOnClickListener {
-//
-//                people.removeAt(position)
-//                notifyDataSetChanged()
-//
-//        }
+        holder.itemView.setOnClickListener {
+
+                people.removeAt(position)
+                notifyDataSetChanged()
+
+        }
     }
 
     override fun getItemCount(): Int {

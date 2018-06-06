@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 import com.example.headerslibrary.HeaderDecorator;
 
+import com.example.headerslibrary.RecyclerTouchListener;
 import com.example.headerslibrary.SectionCallback;
 import com.example.yuliiastelmakhovska.stickyheaderlibrary.Adapters.NameAdapter;
 import com.example.yuliiastelmakhovska.stickyheaderlibrary.Models.Person;
@@ -69,19 +70,12 @@ return isSection(position)? position+"":null;
 
         final List<Person> people = getPeople();
 
-//        HeaderDecorator sectionItemDecoration = new HeaderDecorator(R.layout.custom_header, R.id.list_item_section_text,
-//                R.id.list_item_section_subtext,getResources().getDimensionPixelSize(R.dimen.recycler_test60),true,getSectionCallback(people));
-        HeaderDecorator sectionItemDecoration = new HeaderDecorator(getResources().getDimensionPixelSize(R.dimen.recycler_test), 20f, true, getSectionCallback(people));
+        HeaderDecorator sectionItemDecoration = new HeaderDecorator(R.layout.custom_header, R.id.list_item_section_text,
+                R.id.list_item_section_subtext,getResources().getDimensionPixelSize(R.dimen.recycler_test60),false,getSectionCallback(people));
         recyclerView.addItemDecoration(sectionItemDecoration);
-
 
         recyclerView.setAdapter(new NameAdapter(getLayoutInflater(), people,  R.layout.recycler_row));
         return view;
     }
-
-public void delete(){
-
-}
-
 
 }

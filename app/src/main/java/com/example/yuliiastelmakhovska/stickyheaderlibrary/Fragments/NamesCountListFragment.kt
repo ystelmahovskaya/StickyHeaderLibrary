@@ -11,6 +11,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.headerslibrary.HeaderDecorator
+import com.example.headerslibrary.RecyclerTouchListener
 import com.example.headerslibrary.SectionCallback
 import com.example.yuliiastelmakhovska.stickyheaderlibrary.Models.Person
 import com.example.yuliiastelmakhovska.stickyheaderlibrary.Adapters.NameAdapter
@@ -70,8 +71,8 @@ class NamesCountListFragment : Fragment() {
 
         val people = people
         val sectionItemDecoration = HeaderDecorator(resources.getDimensionPixelSize(R.dimen.recycler_test),
-                resources.getDimension(R.dimen.font_small).dp,
-                true, getSectionCallback(people))
+                resources.getDimension(R.dimen.fab_margin).dp,
+                false, getSectionCallback(people))
         recyclerView.addItemDecoration(sectionItemDecoration)
 
         recyclerView.adapter = NameAdapter(layoutInflater, people as MutableList<Person>, R.layout.recycler_row)
